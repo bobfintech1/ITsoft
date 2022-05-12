@@ -11,6 +11,8 @@ from IT_blogs.api.serializers import BlogsServiceSerializer, MainServiceSerializ
 from IT_blogs.blogs.Partners import PartnersModels
 from IT_blogs.blogs.about import ItAboutModels
 from IT_blogs.blogs.service import HeaderServices, MainService
+#nur
+from IT_blogs.api.serializers import *
 
 
 @api_view(['GET', 'POST'])
@@ -182,4 +184,78 @@ class ITRetrieve(GenericAPIView, RetrieveModelMixin):
         def get(self, request, *args, **kwargs):
             return self.retrieve(request, *args, **kwargs)
 
+#nur
 
+class MainPageHeaderIdView(GenericAPIView, RetrieveModelMixin):
+        queryset = MainPageHeaderModel.objects.all()
+        serializer_class = MainPageHeaderSerializer
+
+        def get(self, request, *args, **kwargs):
+            return self.retrieve(request, *args, **kwargs)
+
+class MainPageAboutIdView(GenericAPIView, RetrieveModelMixin):
+        queryset = MainPageAboutModel.objects.all()
+        serializer_class = MainPageAboutSerializer
+
+        def get(self, request, *args, **kwargs):
+            return self.retrieve(request, *args, **kwargs)
+
+class MainPageServiceIdView(GenericAPIView, RetrieveModelMixin):
+        queryset = MainPageServiceModel.objects.all()
+        serializer_class = MainPageServiceSerializer
+
+        def get(self, request, *args, **kwargs):
+            return self.retrieve(request, *args, **kwargs)
+
+class MainPageNumbersIdView(GenericAPIView, RetrieveModelMixin):
+        queryset = MainPageNumbersModel.objects.all()
+        serializer_class = MainPageNumbersSerializer
+
+        def get(self, request, *args, **kwargs):
+            return self.retrieve(request, *args, **kwargs)
+
+class MainPageBlogIdView(GenericAPIView, RetrieveModelMixin):
+        queryset = MainPageBlogModel.objects.all()
+        serializer_class = MainPageBlogSerializer
+
+        def get(self, request, *args, **kwargs):
+            return self.retrieve(request, *args, **kwargs)
+
+
+
+
+
+class MainPageHeaderView(GenericAPIView, ListModelMixin):
+        queryset = MainPageHeaderModel.objects.all()
+        serializer_class = MainPageHeaderSerializer
+
+        def get(self, request, *args, **kwargs):
+            return self.list(request, *args, **kwargs)
+
+class MainPageAboutView(GenericAPIView, ListModelMixin):
+        queryset = MainPageAboutModel.objects.all()
+        serializer_class = MainPageAboutSerializer
+
+        def get(self, request, *args, **kwargs):
+            return self.list(request, *args, **kwargs)
+
+class MainPageServiceView(GenericAPIView, ListModelMixin):
+        queryset = MainPageServiceModel.objects.all()
+        serializer_class = MainPageServiceSerializer
+
+        def get(self, request, *args, **kwargs):
+            return self.list(request, *args, **kwargs)
+
+class MainPageNumbersView(GenericAPIView, ListModelMixin):
+        queryset = MainPageNumbersModel.objects.all()
+        serializer_class = MainPageNumbersSerializer
+
+        def get(self, request, *args, **kwargs):
+            return self.list(request, *args, **kwargs)
+
+class MainPageBlogView(GenericAPIView, ListModelMixin):
+        queryset = MainPageBlogModel.objects.all()
+        serializer_class = MainPageBlogSerializer
+
+        def get(self, request, *args, **kwargs):
+            return self.list(request, *args, **kwargs)
