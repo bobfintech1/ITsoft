@@ -20,7 +20,10 @@ from rest_framework import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('IT_blogs.api.urls')),
+    path('', include('IT_blogs.api.urls'))
 
 ]
+
+
+
 
